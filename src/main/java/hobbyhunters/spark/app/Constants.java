@@ -1,6 +1,8 @@
 
 package hobbyhunters.spark.app;
 
+import static spark.Spark.port;
+
 /**
  * Application constants.
  * 
@@ -8,6 +10,6 @@ package hobbyhunters.spark.app;
  */
 public class Constants {
     
-    public static final int PORT = 4444;
+    public static final int PORT = (Integer.valueOf(System.getenv("PORT")));
 
 }

@@ -19,8 +19,26 @@ public class EventFilter {
         this.candidates = candidates;
     }
     
-    public List<Event> filter() {
-        return null;
+    public EventFilter filter(User user) {
+        List<Event> toFilter = new ArrayList<Event>();
+        candidates.stream()
+                .filter((event) -> (!event.attendableBy(user)))
+                .forEach((event) -> {
+            toFilter.add(event);
+        });
+        candidates.removeAll(toFilter);
+        return this;
+    }
+    
+    public EventFilter filter(User... users) {
+        for(User user : users) {
+            filter(user);
+        }
+        return this;
+    }
+    
+    public List<Event> get() {
+        return candidates;
     }
 
 }

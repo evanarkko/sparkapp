@@ -9,6 +9,7 @@ import java.util.List;
  * @author eamiller
  */
 public class User {
+    
     private String name;
     private int age;
     private PriceRange priceRange;
@@ -50,7 +51,7 @@ public class User {
     }
     
     public void addFriend(User user){
-        this.friends.add(user);
+        friends.add(user);
     }
     
     

@@ -1,6 +1,6 @@
-package hobbyhunters.spark.app.util;
+package hobbyhunters.spark.app.event;
 
-import hobbyhunters.spark.app.model.Event;
+import hobbyhunters.spark.app.event.Event;
 import hobbyhunters.spark.app.user.User;
 import java.util.ArrayList;
 import java.util.List;

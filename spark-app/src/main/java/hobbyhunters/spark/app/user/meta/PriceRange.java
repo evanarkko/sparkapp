@@ -1,8 +1,12 @@
 package hobbyhunters.spark.app.user.meta;
 
 public enum PriceRange {
-    
-    NOT_EXPENSIVE(0, 10);
+    NOT_EXPENSIVE(0, 10),
+    FREE(0, 0),
+    CHEAP(0, 10),
+    MEDIUM(10, 15),
+    EXPENSIVE(15, 25),
+    VERY_EXPENSIVE(25, 100);
 
     private int lower, upper;
     

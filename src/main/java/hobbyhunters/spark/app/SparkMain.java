@@ -12,18 +12,15 @@ import spark.template.thymeleaf.ThymeleafTemplateEngine;
 public class SparkMain {
     
     public static void main(String[] args) {
-        AbstractParser parser = new EventParser();
-        List<Event> events = parser.getAll();
-        for(Event event : events) {
-            System.out.println(event);
-        }
-        port(Constants.PORT);
+        staticFileLocation("/public");
+        port(Constants.PORT == null ? 4444 : Constants.PORT);
         get("/sivu", (req, res) -> {
             return "Hei maailma";
 //            HashMap map = new HashMap<>();
 //
 //            return new ModelAndView(map, "index");
         });//, new ThymeleafTemplateEngine());
+        init();
     }
 
 }

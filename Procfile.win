@@ -1,1 +1,1 @@
-web: java -cp TKP-forum\target\classes;TKP-forum\target\dependency\* axel.tkp.forum.Forum
+web: java -cp TKP-forum\target\classes;spark-free\target\dependency\* hobbyhunters.spark.SparkMain

@@ -52,7 +52,7 @@
                 <artifactId>heroku-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>
-                    <appName>lit-retreat-67336</appName>
+                    <appName>limitless-eyrie-82125</appName>
                     <processTypes>
                         <web>java $JAVA_OPTS -cp target/classes:target/dependency/* hobbyhunters.spark.SparkMain</web>
                     </processTypes>

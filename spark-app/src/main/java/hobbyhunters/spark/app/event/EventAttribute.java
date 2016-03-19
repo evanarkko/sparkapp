@@ -8,7 +8,6 @@ package hobbyhunters.spark.app.event;
  */
 public interface EventAttribute<T> {
 
-    public T getType();
     public T getValue();
     public String getName();
 }

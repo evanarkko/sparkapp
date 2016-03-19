@@ -1,25 +1,27 @@
 package hobbyhunters.spark.app.user;
 
-import hobbyhunters.spark.app.user.meta.PriceRange;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author eamiller
+ * Represents an user.
+ * 
+ * @author Evan Miller
+ * @author Axel Wallin
  */
 public class User {
     
-    private String name;
+    private String name, location;
     private int age;
-    private PriceRange priceRange;
-    private String location;
+    private double priceMin, priceMax;
     private List<User> friends;
 
-    public User(String name, int age) {
+    public User(String name, int age, double priceMin, double priceMax) {
         this.name = name;
         this.age = age;
         this.friends = new ArrayList<>();
+        this.priceMin = priceMin;
+        this.priceMax = priceMax;
     }
 
     public int getAge() {
@@ -34,8 +36,17 @@ public class User {
         return name;
     }
 
-    public PriceRange getPriceRange() {
-        return priceRange;
+    public double getPriceMin() {
+        return priceMin;
+    }
+    
+    public double getPriceMax() {
+        return priceMax;
+    }
+    
+    public void setPriceRange(int min, int max) {
+        this.priceMin = min;
+        this.priceMax = max;
     }
 
     public void setAge(int age) {
@@ -45,16 +56,8 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
-    public void setPriceRange(PriceRange priceRange) {
-        this.priceRange = priceRange;
-    }
     
     public void addFriend(User user){
         friends.add(user);
     }
-    
-    
-    
-    
 }

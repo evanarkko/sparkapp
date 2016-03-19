@@ -6,7 +6,7 @@ public class SparkMain {
     
     public static void main(String[] args) {
         port(Constants.PORT);
-        get("/", (req, res) -> "Hello! We're live.");
+        get("/EventSpark", (req, res) -> "Hello! We're live.");
     }
 
 }

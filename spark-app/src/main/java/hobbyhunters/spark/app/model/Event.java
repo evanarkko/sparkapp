@@ -11,5 +11,6 @@ package hobbyhunters.spark.app.model;
  * @author Axel Wallin
  */
 public class Event {
+    
 
 }

@@ -7,14 +7,14 @@ import spark.template.thymeleaf.ThymeleafTemplateEngine;
 
 public class SparkMain {
     
-    public static void main(String[] args) {
+    public static void main(String[] args)  throws ClassNotFoundException {
         port(Constants.PORT);
         get("/sivu", (req, res) -> {
-            return "Hei maailma";
-//            HashMap map = new HashMap<>();
-//
-//            return new ModelAndView(map, "index");
-        });//, new ThymeleafTemplateEngine());
+//            return "Hei maailma";
+            HashMap map = new HashMap<>();
+
+            return new ModelAndView(map, "index");
+        }, new ThymeleafTemplateEngine());
     }
 
 }

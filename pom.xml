@@ -52,9 +52,9 @@
                 <artifactId>heroku-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>
-                    <appName>mighty-tundra-96865</appName>
+                    <appName>mysterious-springs-86787</appName>
                     <processTypes>
-                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* hobbyhunters.spark.SparkMain</web>
+                        <web>java $JAVA_OPTS -cp spark-app/target/classes:spark-app/target/dependency/* hobbyhunters.spark.SparkMain</web>
                     </processTypes>
                 </configuration>
             </plugin>

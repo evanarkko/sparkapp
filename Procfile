@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* hobbyhunters.spark.SparkMain
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* hobbyhunters.spark.app.SparkMain

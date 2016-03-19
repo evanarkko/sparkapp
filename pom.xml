@@ -54,7 +54,7 @@
                 <configuration>
                     <appName>limitless-eyrie-82125</appName>
                     <processTypes>
-                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* hobbyhunters.spark.SparkMain</web>
+                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* hobbyhunters.spark.app.SparkMain</web>
                     </processTypes>
                 </configuration>
             </plugin>

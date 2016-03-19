@@ -1,6 +1,8 @@
 package hobbyhunters.spark.app.util;
 
 import hobbyhunters.spark.app.model.Event;
+import hobbyhunters.spark.app.user.User;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +21,14 @@ public class EventFilter {
         this.candidates = candidates;
     }
     
+    /**
+     * Filter out results that cannot be applied to the given user.
+     * 
+     * @param user the user to filter out events for.
+     * @return this event filter with modified event candidates.
+     */
     public EventFilter filter(User user) {
-        List<Event> toFilter = new ArrayList<Event>();
+        List<Event> toFilter = new ArrayList<>();
         candidates.stream()
                 .filter((event) -> (!event.attendableBy(user)))
                 .forEach((event) -> {
@@ -30,6 +38,12 @@ public class EventFilter {
         return this;
     }
     
+    /**
+     * Filter out results that cannot be applied to the given users.
+     * 
+     * @param users the users to filter out events for.
+     * @return this event filter with modified event candidates.
+     */
     public EventFilter filter(User... users) {
         for(User user : users) {
             filter(user);
@@ -37,6 +51,11 @@ public class EventFilter {
         return this;
     }
     
+    /**
+     * Get the candidates of this event filter.
+     * 
+     * @return candidates.
+     */
     public List<Event> get() {
         return candidates;
     }

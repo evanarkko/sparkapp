@@ -1,5 +1,8 @@
 package hobbyhunters.spark.app.model;
 
+import hobbyhunters.spark.app.user.User;
+import java.util.stream.Stream;
+
 public class Event {
    
     private double price;
@@ -17,5 +20,9 @@ public class Event {
     
     public String getName() {
         return name;
+    }
+
+    public boolean attendableBy(User user) {
+        return false;
     }
 }

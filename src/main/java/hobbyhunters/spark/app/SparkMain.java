@@ -11,12 +11,6 @@ public class SparkMain {
    public static void main(String[] args) {
         staticFileLocation("/public");
         port(Constants.PORT);
-        get("/sivu", (req, res) -> {
-            return "Hei maailma";
-//            HashMap map = new HashMap<>();
-//
-//            return new ModelAndView(map, "index");
-        });//, new ThymeleafTemplateEngine());
         get("/scope", (req, res) -> {
             Map map = new HashMap<>();
             map.put("baseUrl", Constants.BASE_URL);

@@ -13,13 +13,18 @@ public class SparkMain {
     
     public static void main(String[] args) {
         staticFileLocation("/public");
-        port(Constants.PORT == null ? 4444 : Constants.PORT);
+        port(Constants.PORT);
         get("/sivu", (req, res) -> {
             return "Hei maailma";
 //            HashMap map = new HashMap<>();
 //
 //            return new ModelAndView(map, "index");
         });//, new ThymeleafTemplateEngine());
+        post("/fblogin", (req, res) -> {
+            HashMap map = new HashMap<>();
+            System.out.println();
+            return new ModelAndView(map, "index");
+        }, new ThymeleafTemplateEngine());
         init();
     }
 

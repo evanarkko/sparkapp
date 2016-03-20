@@ -5,7 +5,7 @@
 body {
     background-repeat: no-repeat;
     background-position: left top;
-	background-size: 1024px 768px;
+	background-size: cover;
 }
 </style>
 <title>Spark App</title>
@@ -89,7 +89,7 @@ body {
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response.name + ', gender: ' + response.gender + '!';
     });
   }
 </script>

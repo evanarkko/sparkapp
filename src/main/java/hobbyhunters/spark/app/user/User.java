@@ -15,13 +15,14 @@ public class User {
     private int age;
     private double priceMin, priceMax;
     private List<User> friends;
+    private Scope scope;
+    private Gender gender;
 
-    public User(String name, int age, double priceMin, double priceMax) {
+    public User(String name, int age, Gender gender) {
         this.name = name;
         this.age = age;
         this.friends = new ArrayList<>();
-        this.priceMin = priceMin;
-        this.priceMax = priceMax;
+        this.gender = gender;
     }
 
     public int getAge() {
@@ -44,20 +45,27 @@ public class User {
         return priceMax;
     }
     
-    public void setPriceRange(int min, int max) {
-        this.priceMin = min;
-        this.priceMax = max;
+    public Scope getScope() {
+        return scope;
     }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    
+    public void setScope(Scope scope) {
+        this.scope = scope;
     }
     
     public void addFriend(User user){
         friends.add(user);
+    }
+    
+    public Gender getGender() {
+        return gender;
+    }
+    
+    public enum Gender {
+        
+        FEMALE,
+        MALE,
+        OTHER;
+        
     }
 }

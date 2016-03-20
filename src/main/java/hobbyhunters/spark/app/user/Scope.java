@@ -22,5 +22,17 @@ public class Scope {
     public boolean isCharitable() {
         return charitable;
     }
+    
+    public double[] getPriceRange() {
+        return price;
+    }
+    
+    public int[] getPhysicalSettings() {
+        return physicalSettings;
+    }
+    
+    public int[] getAdrenalineSettings() {
+        return adrenalineSettings;
+    }
 
 }

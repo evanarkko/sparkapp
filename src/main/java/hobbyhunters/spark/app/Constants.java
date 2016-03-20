@@ -1,7 +1,4 @@
-
 package hobbyhunters.spark.app;
-
-import static spark.Spark.port;
 
 /**
  * Application constants.

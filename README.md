@@ -2,4 +2,5 @@
 
 Spark App source files. Currently under development.
 
-<b>© SparkApp Team 2016</b> - created in under 48 hours during #SomeJam2016 -
+Created in under 48 hours during #SomeJam2016.
+<b>© SparkApp Team 2016</b>

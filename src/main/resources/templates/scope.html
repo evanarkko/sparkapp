@@ -1,0 +1,87 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Spark - Scoping</title>
+        <meta charset="ISO-8859-1"/>
+        <link rel="stylesheet" href="jquery/jquery-ui.min.css"/>
+        <script src="jquery/jquery.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script>
+                $(function () {
+                    $("#slider-range").slider({
+                        range: true,
+                        min: 0,
+                        max: 100,
+                        values: [0, 10],
+                        slide: function (event, ui) {
+                            $("#amount").val("€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ]);
+                        }
+                    });
+                    $("#amount").val("€" + $("#slider-range").slider("values", 0) +
+                            " - $" + $("#slider-range").slider("values", 1));
+                });
+            </script>
+            <script>
+                $(function () {
+                    $("#slider-range-sub").slider({
+                        range: true,
+                        min: 0,
+                        max: 10,
+                        values: [0, 10],
+                        slide: function (event, ui) {
+                            $("#adrenaline-amount").val(ui.values[ 0 ] + " - " + ui.values[ 1 ]);
+                        }
+                    });
+                    $("#adrenaline-amount").val($("#slider-range-sub").slider("values", 0) +
+                            " - " + $("#slider-range-sub").slider("values", 1));
+                });
+            </script>
+            <script>
+                $(function () {
+                    $("#slider-range-physical").slider({
+                        range: true,
+                        min: 0,
+                        max: 10,
+                        values: [0, 10],
+                        slide: function (event, ui) {
+                            $("#physical-amount").val(ui.values[ 0 ] + " - " + ui.values[ 1 ]);
+                        }
+                    });
+                    $("#physical-amount").val($("#slider-range-sub").slider("values", 0) +
+                            " - " + $("#slider-range-sub").slider("values", 1));
+                });
+            </script>
+    </head>
+
+    <body>
+        <center>
+            <h2>Scope</h2><br/>
+            <form method="POST" th:action="|${baseUrl}/submitScope|">
+                <p>
+                    <label for="amount">Price range:</label>
+                    <input type="text" id="amount" style="border:0; width:100px; color:#f6931f; font-weight:bold;"/>
+                </p>
+                <div id="slider-range"></div><br/>
+                <p>
+                    <label for="adrenaline-amount">Adrenaline level:</label>
+                    <input type="text" id="adrenaline-amount" style="border:0; width:100px; color:#f6931f; font-weight:bold;"/>
+                </p>
+                <div id="slider-range-sub"></div><br/>
+                <p>
+                    <label for="physical-amount">Physical level:</label>
+                    <input type="text" id="physical-amount" style="border:0; width:100px; color:#f6931f; font-weight:bold;"/>
+                </p>
+                <div id="slider-range-physical"></div><br/>
+                <input type="checkbox" name="charitable" value="true">I feel charitable</input><br/><br/>
+                <input type="submit" value="Save!"/>
+            </form>
+        </center>
+    </body>
+    <footer>
+        <center>
+            <br/><br/>
+            <h3>© Spark App team 2016</h3>
+        </center>
+    </footer>
+</html>

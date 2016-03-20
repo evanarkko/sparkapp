@@ -9,7 +9,9 @@ import java.util.List;
  * @author Evan Miller
  * @author Axel Wallin
  */
+
 public class User {
+<<<<<<< HEAD:src/main/java/hobbyhunters/spark/app/user/User.java
     
     private String name, location;
     private int age;
@@ -17,12 +19,34 @@ public class User {
     private List<User> friends;
 
     public User(String name, int age, double priceMin, double priceMax) {
+=======
+    private String name;
+    private String password;
+    private int age;
+    private Gender gender;
+    private PriceRange priceRange;
+    private String location;
+    private List<User> friends;
+
+    public User(String name, int age, Gender gender) {
+>>>>>>> evan:spark-app/src/main/java/hobbyhunters/spark/app/user/User.java
         this.name = name;
         this.age = age;
+        this.gender = gender;
         this.friends = new ArrayList<>();
         this.priceMin = priceMin;
         this.priceMax = priceMax;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    
+    
 
     public int getAge() {
         return age;
@@ -60,4 +84,16 @@ public class User {
     public void addFriend(User user){
         friends.add(user);
     }
+<<<<<<< HEAD:src/main/java/hobbyhunters/spark/app/user/User.java
 }
+=======
+
+    public Gender getGender() {
+        return gender;
+    }
+    
+    
+    
+    
+}
+>>>>>>> evan:spark-app/src/main/java/hobbyhunters/spark/app/user/User.java
